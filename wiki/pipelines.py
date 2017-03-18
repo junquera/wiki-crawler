@@ -7,5 +7,6 @@
 
 
 class WikiPipeline(object):
-    def process_item(self, item, spider):
-        return item
+	def process_item(self, item, spider):
+		print(item['title'])
+		return item

@@ -46,9 +46,11 @@ NEWSPIDER_MODULE = 'wiki.spiders'
 #SPIDER_MIDDLEWARES = {
 #    'wiki.middlewares.MyCustomSpiderMiddleware': 543,
 #}
+
 SPIDER_MIDDLEWARES = {
 	'scrapy.spidermiddlewares.referer.RefererMiddleware': 543,
 }
+
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
@@ -66,6 +68,10 @@ SPIDER_MIDDLEWARES = {
 #ITEM_PIPELINES = {
 #    'wiki.pipelines.SomePipeline': 300,
 #}
+
+ITEM_PIPELINES = {
+	'wiki.pipelines.WikiPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
