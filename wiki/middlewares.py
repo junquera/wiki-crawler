@@ -1,10 +1,8 @@
-import md5
 from scrapy.exceptions import IgnoreRequest
 
-def hash(text):
-	instance = md5.md5(text)
-	return instance.hexdigest()
+from wiki.utils import hash
 
+# https://doc.scrapy.org/en/1.3/topics/settings.html#std:setting-DUPEFILTER_CLASS
 class AvoidDupicatesDownloaderMiddleware():
 	visited = []
 	def process_request(self, request, spider):

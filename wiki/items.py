@@ -7,12 +7,6 @@
 
 import scrapy
 
-
-class WikiItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
-
 class Article(scrapy.Item):
 	title = scrapy.Field()
 	url = scrapy.Field()

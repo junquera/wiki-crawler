@@ -75,6 +75,8 @@ DOWNLOADER_MIDDLEWARES = {
 
 ITEM_PIPELINES = {
 	'wiki.pipelines.WikiPipeline': 300,
+#	'wiki.pipelines.SerializePipeline': 301,
+	'wiki.pipelines.Neo4jPipeline': 302,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
