@@ -57,6 +57,10 @@ SPIDER_MIDDLEWARES = {
 #    'wiki.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
+DOWNLOADER_MIDDLEWARES = {
+	'wiki.middlewares.AvoidDupicatesDownloaderMiddleware': 543,
+}
+
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
