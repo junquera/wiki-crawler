@@ -3,7 +3,7 @@
 Crawler de Wikipedia para aprender a trabajar con [Scrapy](https://scrapy.org/)
 (y de paso, con [neo4j](https://neo4j.com/))
 
-![Example image](/images/graph_readme.png)
+![Example image](images/graph_readme.png)
 
 ## Requisitos
 
