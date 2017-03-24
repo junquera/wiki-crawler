@@ -1,6 +1,6 @@
-import md5
+import hashlib
 
 def hash(text):
-	instance = md5.md5(text)
+	instance = hashlib.md5()
+	instance.update(bytearray(text, "utf-8"))
 	return instance.hexdigest()
-

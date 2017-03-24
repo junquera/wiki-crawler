@@ -9,7 +9,6 @@ import config
 
 from neo4j.v1 import GraphDatabase, basic_auth
 
-from wiki.utils import hash
 
 class WikiPipeline():
 	def process_item(self, item, spider):
@@ -25,8 +24,8 @@ class SerializePipeline():
 
 	def process_item(self, item, spider):
 		dictItem = dict(item)
-		dictItem['url'] = hash(dictItem['url'])
-		dictItem['referer'] = hash(dictItem['referer'])
+		dictItem['url'] = dictItem['url']
+		dictItem['referer'] = dictItem['referer']
 		line = json.dumps(dictItem) + "\n"
 		self.file.write(line)
 		return item
@@ -41,12 +40,14 @@ class Neo4jPipeline():
 
 	def process_item(self, item, spider):
 		title = item['title']
-		url = hash(item['url'])
-		referer = hash(item['referer'])
+		url = item['url']
+		referer = item['referer']
 		self.session.run("CREATE (a:Article {title: {title}, referer: {referer}, url: {url}})",
 								{"title": title, "referer": referer, "url": url})
+		self.session.run("MATCH (p:Article), (s:Article) WHERE p.url = {referer} AND s.url={url} CREATE (p)-[:PARENT]->(s) ", {"referer": referer, "url": url})
 
-# Si no hay un return y este pipeline se configura antes, es el 
+
+# Si no hay un return y este pipeline se configura antes, es el
 # unico que accede a los Items
 #	class TestPipeline():
 #		def process_item(self, item, spider):

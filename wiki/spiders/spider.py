@@ -7,12 +7,12 @@ from wiki.items import Article
 
 class SpiderSpider(scrapy.Spider):
 		name = "spider"
-		allowed_domains = ["es.wikipedia.org"]
+
 		start_urls = (
 			'https://es.wikipedia.org/wiki/Parque_de_la_Ciudadela',
 		)
-		
-		def parse(self, response):	
+
+		def parse(self, response):
 			title = response.css('#firstHeading::text').extract_first()
 			url = response.url
 			referer = response.request.headers.get('Referer', None)
@@ -21,4 +21,3 @@ class SpiderSpider(scrapy.Spider):
 				yield scrapy.Request(response.urljoin(nextUrl), callback=self.parse)
 
 			yield Article(title=title, url=response.url, referer=response.request.headers.get('Referer', None))
-

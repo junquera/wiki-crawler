@@ -3,6 +3,8 @@
 Crawler de Wikipedia para aprender a trabajar con [Scrapy](https://scrapy.org/)
 (y de paso, con [neo4j](https://neo4j.com/))
 
+![Example image](/graph.png)
+
 ## Requisitos
 
 - python 2.7
@@ -10,8 +12,6 @@ Crawler de Wikipedia para aprender a trabajar con [Scrapy](https://scrapy.org/)
 	- Las librerías adicionales (como *scrapy*) se encuentran en el archivo *requeriments.txt*. 
 
 - [OPCIONAL] neo4j (se puede desactivar en *wiki/settings.py*)
-
-
 
 ## Instalación
 
