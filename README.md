@@ -9,9 +9,9 @@ Crawler de Wikipedia para aprender a trabajar con [Scrapy](https://scrapy.org/)
 
 - python 3
 
-	- Las librerías adicionales (como *scrapy*) se encuentran en el archivo *requeriments.txt*. 
+	- Las librerías adicionales (como `scrapy`) se encuentran en el archivo *requeriments.txt*. 
 
-- [OPCIONAL] neo4j (se puede desactivar en *wiki/settings.py*)
+- [OPCIONAL] neo4j (se puede desactivar en `wiki/settings.py`)
 
 ## Instalación
 
