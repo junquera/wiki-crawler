@@ -7,7 +7,7 @@ Crawler de Wikipedia para aprender a trabajar con [Scrapy](https://scrapy.org/)
 
 ## Requisitos
 
-- python 3 3 3 
+- python 3
 
 	- Las librerías adicionales (como *scrapy*) se encuentran en el archivo *requeriments.txt*. 
 
