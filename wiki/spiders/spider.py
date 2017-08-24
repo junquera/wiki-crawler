@@ -7,7 +7,7 @@ from wiki.items import Article
 
 class SpiderSpider(scrapy.Spider):
 		name = "spider"
-
+		allowed_domains = ["es.wikipedia.org"]
 		start_urls = (
 			'https://es.wikipedia.org/wiki/Parque_de_la_Ciudadela',
 		)
